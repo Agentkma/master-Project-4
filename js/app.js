@@ -146,7 +146,7 @@ $(window).keydown(function(e){
 
 
 //keyboard return select of gallery image....NOT working
-  document.getElementById("#imageGallery a")
+  document.querySelector("#imageGallery a")
     .addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode == 13) {
@@ -180,16 +180,23 @@ $overlay.click(function(event){
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
+
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
 
-        }
+            $('li').animate({
+                width: "80%",
+                height: "80%",
+                opacity: "80%",
 
-    }
+              }, 5000, function() {
+                // Animation complete.
+              }
+            );
+          }
+        else {
+            li[i].style.display = "none";}
 
-}
-///animation below did not work.....
-//$('img').animate({ppadding: '8px';
-//margin: '10px';},slow);
+          }
+
+      }

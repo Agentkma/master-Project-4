@@ -73,7 +73,6 @@ li.selected {
 #btnPrev {
   left:5%!important;
   top: 35%;
-  float:left;
   background: none;
   border: none;
   width: .5em;
@@ -81,9 +80,10 @@ li.selected {
   font-size: 3em;
   font-weight: lighter;
   z-index: 10;
-  position: absolute !important;
+  position: fixed !important;
   color: white;
-  overflow: inherit;
+
+
 
 
 
@@ -92,7 +92,6 @@ li.selected {
 #btnNext {
   right:5%!important;
   top: 35%;
-  float:right;
   background: none;
   border: none;
   width: .5em;
@@ -100,10 +99,11 @@ li.selected {
   font-size: 3em;
   font-weight: lighter;
   z-index: 10;
-  position: absolute !important;
+  position: fixed !important;
   color: white;
-  overflow: inherit;
-  text-align: right;
+  
+
+
 }
 
 
