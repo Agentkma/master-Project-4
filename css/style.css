@@ -82,6 +82,8 @@ li.selected {
   z-index: 10;
   position: fixed !important;
   color: white;
+  button:focus;
+  outline:0;
 
 
 
@@ -101,7 +103,9 @@ li.selected {
   z-index: 10;
   position: fixed !important;
   color: white;
-  
+  button:focus;
+  outline:0;
+
 
 
 }

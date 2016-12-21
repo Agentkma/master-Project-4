@@ -150,7 +150,7 @@ $(window).keydown(function(e){
     .addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode == 13) {
-        document.getElementById("#imageGallery a").click();
+        document.getElementById("#imageGallery a");
     }
 });
 
@@ -182,18 +182,25 @@ $overlay.click(function(event){
         a = li[i].getElementsByTagName("a")[0];
 
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+            li[i].style.display = "inline-block";
 
-            $('li').animate({
-                width: "80%",
-                height: "80%",
-                opacity: "80%",
+            $('li img').animate({
+                width: "10em",
 
-              }, 5000, function() {
+              }, 1000, function()
+              {
                 // Animation complete.
+                $( "li img" ).finish()
+                  .css({
+                    display: "inline-block",
+                    padding: "8px",
+                    margin: "10px",
+                    width: "200px",
+                    height: "200px"
+                  });
+                }
+                );
               }
-            );
-          }
         else {
             li[i].style.display = "none";}
 
