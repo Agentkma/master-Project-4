@@ -27,34 +27,38 @@ $overlay.append("<button id='btnNext'> > </button>");
 
 // Update image overlay
 //
-var updateImage = function(imageLocation, captionText){
+var updateImage = function(imageLocation, captionText)
+  {
 
   //1.2 update the overlay with the image linked in the link
   $image.attr("src", imageLocation);
 
   //1.3 Get child <img> alt atrbute and set caption
   $caption.text(captionText);
-};
+  };
 
 
 //capture the click event on a link to an image
-$('#imageGallery a').click(function(event){
-  event.preventDefault();
-  var imageLocation = $(this).attr('href');
-  //get the child's alt attribute
-  var captionText =$(this).children("img").attr("alt");
+$('#imageGallery a').click(function(event)
+    {
+      event.preventDefault();
+      var imageLocation = $(this).attr('href');
+      //get the child's alt attribute
+      var captionText =$(this).children("img").attr("alt");
 
-  //update index to current selected image
-    $index = $(this).parent().index();
-  //this is calling that new Update overlay function above
-      updateImage(imageLocation, captionText);
+      //update index to current selected image
+        $index = $(this).parent().index();
+      //this is calling that new Update overlay function above
+          updateImage(imageLocation, captionText);
 
-  //show the overlay
-  $overlay.slideDown(imageLocation);
-  });
+      //show the overlay
+      $overlay.slideDown(imageLocation);
+    }
+  );
 
 //Button prev next function
-var prevNext = function(prev ) {
+var prevNext = function(prev )
+{
   //set prev to true to move backwards in the index
 
   //if flag set move backwards, if not move forwards
@@ -89,7 +93,8 @@ $("#btnNext").click(function(event){
 //keyboard nav of photos on overlay/lightbox..
 
 
-$(document).keydown(function(e) {
+$(document).keydown(function(e)
+{
     switch(e.which) {
         case 37: // left
         $("#btnPrev").click();
@@ -115,7 +120,8 @@ $(document).keydown(function(e) {
 
 var li = $('li');
 var liSelected;
-$(window).keydown(function(e){
+$(window).keydown(function(e)
+  {
     if(e.which === 39){
         if(liSelected){
             liSelected.removeClass('selected');
@@ -145,7 +151,7 @@ $(window).keydown(function(e){
   });
 
 
-//keyboard return select of gallery image....NOT working
+//NOT WORKING keyboard return select of gallery image....NOT WORKING//////////
   document.querySelector("#imageGallery a")
     .addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -160,7 +166,7 @@ $(window).keydown(function(e){
 
 
 //3. When overlay is clicked
-$overlay.click(function(event){
+  $overlay.click(function(event){
   //3.1 Hide the overlay
 
     if(event.target.id == "overlay")
@@ -178,32 +184,32 @@ $overlay.click(function(event){
     li = ul.getElementsByTagName('li');
 
     // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
+    for (i = 0; i < li.length; i++)
+    {
         a = li[i].getElementsByTagName("a")[0];
 
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "inline-block";
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
+          {
+              li[i].style.display = "inline-block";
 
             $('li img').animate({
-                width: "10em",
-
-              }, 1000, function()
-              {
-                // Animation complete.
-                $( "li img" ).finish()
-                  .css({
-                    display: "inline-block",
-                    padding: "8px",
-                    margin: "10px",
-                    width: "200px",
-                    height: "200px"
-                  });
-                }
-                );
-              }
-        else {
-            li[i].style.display = "none";}
-
+              width: "10em"},1000);
           }
+////NOT WORKING code below is supposed to make the styling of the gallery pics go back to original states when the text is removed from search box...NOT WORKING
+  /*       if (input.value === " ")
+        {
 
-      }
+            $('img').css(
+                "display: inline block",
+                "width: 200px",
+                "height: 200px"
+              );
+        }*/
+
+        ////////
+
+        else {
+            li[i].style.display = "none";
+              }
+      };
+    }
