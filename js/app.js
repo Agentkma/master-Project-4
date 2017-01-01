@@ -1,3 +1,6 @@
+/**************VARIABLES**************/
+
+
 
 var $overlay =$('<div id="overlay"></div');
 var $image=$("<img>");
@@ -11,6 +14,11 @@ var $index = 0;
 //we are assigning the length total
 //making it flexible to expand the gallery or take away
 var $galleryLength = $("#imageGallery li").length;
+
+
+
+
+
 
 //Add overlay
 $('body').append($overlay);
@@ -192,19 +200,28 @@ $(window).keydown(function(e)
           {
               li[i].style.display = "inline-block";
 
-            $('li img').animate({
-              width: "10em"},1000);
-          }
-////NOT WORKING code below is supposed to make the styling of the gallery pics go back to original states when the text is removed from search box...NOT WORKING
-  /*       if (input.value === " ")
-        {
+              /*ANIMATION WORKS BUT CANNOT GET IMAGES IN GALLERY TO RETURN TO THEIR NORMAL SIZE WHEN TEXT IS DELETED FROM SEARCH BOX WITHOUT REFESHING PAGE
 
-            $('img').css(
-                "display: inline block",
-                "width: 200px",
-                "height: 200px"
-              );
-        }*/
+              $('li img').animate(
+                {width: "150px"}, 1000);
+
+                    // Animation complete.
+                    $( this ).finish()    */
+
+          }
+
+        /*   THIS DOES NOT SEEM TO BE WORKING...TRYING TO GET IMAGE GALLERY BACK TO ORIGINAL APPEARANCE AFTER ANIMATION COMPLETE OR SEARCH BOX REMOVED
+        else if (input.value = " "){
+            .css({
+              display: "inline-block",
+              padding: "8px",
+              margin: "10px",
+              width: "200px",
+              height: "200px"
+            })
+          }*/
+
+
 
         ////////
 
