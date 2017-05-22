@@ -91,7 +91,7 @@ footer {
   top: 35%;
   background: none;
   border: none;
-  width: .5em;
+  /*width: .5em;*/
   height: 4em;
   font-size: 3em;
   font-weight: lighter;
@@ -106,7 +106,7 @@ footer {
   top: 35%;
   background: none;
   border: none;
-  width: .5em;
+  /*width: .5em;*/
   height: 4em;
   font-size: 3em;
   font-weight: lighter;
@@ -114,9 +114,9 @@ footer {
   position: fixed !important;
   color: white;
   outline:0;
-  display: flex;
+  /*display: flex;
   align-items: flex-end;
-  text-align: left;
+  text-align: left;*/
 
   }
 
